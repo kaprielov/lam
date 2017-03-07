@@ -4,12 +4,12 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<title>property</title>
-	<link rel="stylesheet" href="css/app.css" type="text/css">
-	<script src="js/app.js" type="text/javascript"></script>
-</head>
+	<link rel="stylesheet" href="css/app.css" type="text/css"></head>
 <body>
 	<div class="page-wr">
-		<div class="preloader"><div class="preloader__ico"></div></div>
+		<div class="preloader">
+			<div class="preloader__ico"></div>
+		</div>
 		<div class="success">success</div>
 		<div class="slide slide-1 on">
 			<div class="slide-1__in">
@@ -19,7 +19,18 @@
 		</div>
 		<div class="slide slide-2 off">
 			<h2 class="slide__title slide__title--slide-2">Шаг 2</h2>
-			<ul class="card-wr"></ul>
+			<div class="local-wr">
+				<p class="local-title">Карточки</p>
+				<div class="local-checkbox">
+					<span class="local-checkbox__on"></span>
+					<input type="checkbox" id="local-checkbox" ng-model="form.is_aviasales" name="check" checked />
+					<label class="local-checkbox_btn" for="local-checkbox"></label>
+					<span class="local-checkbox__off active"></span>
+				</div>
+				<p class="local-title">На карте</p>
+			</div>
+			<div id="map" class="map-wr"></div>
+			<ul class="card-wr active open"></ul>
 		</div>
 		<div class="slide slide-3 off">
 			<h2 class="slide__title slide__title--slide-3">Шаг 3</h2>
@@ -32,5 +43,8 @@
 			<button class="slide-3__btn">Назад</button>
 		</div>
 	</div>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcVHTDeiGYE4XiJPFECGrd4G2BukGQGe4&callback=initMap"
+    async defer></script>
+	<script src="js/app.js" type="text/javascript"></script>
 </body>
 </html>
